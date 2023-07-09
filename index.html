@@ -9,8 +9,30 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>Home</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptatibus, voluptatem, quibusdam, quia voluptas quod quos voluptatum quas doloremque quidem dolorum ipsa natus. Quisquam, voluptatibus, voluptatem, quibusdam, quia voluptas quod quos voluptatum quas doloremque quidem dolorum ipsa natus.</p>
+              <div hx-target="this" hx-swap="outerHTML">
+                <div><label>First Name</label>: Joe</div>
+                <div><label>Last Name</label>: Blow</div>
+                <div><label>Email</label>: joe@blow.com</div>
+                <button hx-get="/contact/1/edit" class="btn btn-primary">
+                Click To Edit
+                </button>
+            </div>
+              <form hx-put="/contact/1" hx-target="this" hx-swap="outerHTML">
+                <div>
+                  <label>First Name</label>
+                  <input type="text" name="firstName" value="Joe">
+                </div>
+                <div class="form-group">
+                  <label>Last Name</label>
+                  <input type="text" name="lastName" value="Blow">
+                </div>
+                <div class="form-group">
+                  <label>Email Address</label>
+                  <input type="email" name="email" value="joe@blow.com">
+                </div>
+                <button class="btn">Submit</button>
+                <button class="btn" hx-get="/contact/1">Cancel</button>
+              </form> 
             </div>
         </div>
     </div>
